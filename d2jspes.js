@@ -19,6 +19,12 @@ if ( window.location.pathname == "/topic.php" ) {
         $(this).html(newcontent);
         btag.lastIndex = 0;
     });
+
+    // Add a PM link after every user link
+    $('dt>a[href^="user"]').each( function( idx ) {
+        userid = /[0-9]+/.exec( $(this).attr('href') );
+        $(this).after( " (<a href='pm.php?c=1&u=" + userid[0] + "'>PM</a>)" );
+    });
 }
 
 if ( window.location.pathname == "/forum.php" ) {
