@@ -2,9 +2,11 @@ if ( window.location.pathname == "/topic.php" ) {
     // Convert FG to IGG.  FIXME configurable ratio.
     $('.bc1>b').each( function( idx ) {
         gold = parseFloat($(this).text().replace(/,/g, ""));
-        igg = gold / 15.0;
-        if ( igg > 0 ) {
-            $(this).append(' (' + Number(igg.toFixed(2)).toLocaleString() + 'm)');
+        igg = Math.round( gold / 15.0 );
+        if ( igg > 1000 ) {
+            $(this).append(' (' + ( igg / 1000 ).toFixed( 2 ) + 'b)');
+        } else if ( igg > 0 ) {
+            $(this).append(' (' + igg + 'm)');
         }
     });
 
