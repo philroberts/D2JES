@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+
+    "name": "D2JSP Enhancement Suite",
+    "description": "Make jsp suck less.",
+    "version": "0.1",
+
+    "permissions": [
+        "http://forums.d2jsp.org/"
+    ],
+
+    "content_scripts": [
+        {
+            "matches": [
+                "http://forums.d2jsp.org/forum.php*",
+                "http://forums.d2jsp.org/topic.php*"
+            ],
+            "js": [
+                "jquery-1.9.1.min.js",
+                "d2jspes.js"
+            ]
+        }
+    ]
+}
