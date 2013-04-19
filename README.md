@@ -9,6 +9,7 @@ Features
 - Removes red/bold from thread titles.
 - Converts forum gold to igg in user block.
 - Converts plaintext battle tags to bnet + d3up links.
+- Adds a PM link next to username on each post.
 
 TODO
 ----
