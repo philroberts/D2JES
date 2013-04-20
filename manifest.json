@@ -5,7 +5,10 @@
     "description": "Make jsp suck less.",
     "version": "0.1",
 
+    "options_page": "options.html",
+
     "permissions": [
+        "storage",
         "http://forums.d2jsp.org/"
     ],
 

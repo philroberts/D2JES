@@ -1,13 +1,16 @@
 if ( window.location.pathname == "/topic.php" ) {
     // Convert FG to IGG.  FIXME configurable ratio.
-    $('.bc1>b').each( function( idx ) {
-        gold = parseFloat($(this).text().replace(/,/g, ""));
-        igg = Math.round( gold / 15.0 );
-        if ( igg > 1000 ) {
-            $(this).append(' (' + ( igg / 1000 ).toFixed( 2 ) + 'b)');
-        } else if ( igg > 0 ) {
-            $(this).append(' (' + igg + 'm)');
-        }
+    chrome.storage.local.get( { "fgratio" : 15 }, function( result ) {
+        fgratio = result[ "fgratio" ];
+        $('.bc1>b').each( function( idx ) {
+            gold = parseFloat($(this).text().replace(/,/g, ""));
+            igg = Math.round( gold / fgratio );
+            if ( igg > 1000 ) {
+                $(this).append(' (' + ( igg / 1000 ).toFixed( 2 ) + 'b)');
+            } else if ( igg > 0 ) {
+                $(this).append(' (' + igg + 'm)');
+            }
+        });
     });
 
     // Add bnet link for battletags.
