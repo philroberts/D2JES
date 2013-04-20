@@ -26,4 +26,4 @@ TODO
 - Infinite scrolling.
 - User tagging.
 - Show user's local time next to their post time.
-- Configurable fg/igg ratio.
+
