@@ -11,6 +11,16 @@ Features
 - Converts plaintext battle tags to bnet + d3up links.
 - Adds a PM link next to username on each post.
 
+Installation
+------------
+
+Download the zip file
+[here](https://github.com/philroberts/D2JES/archive/master.zip).
+Extract to the location of your choice.  Now in chrome go to the
+extensions tab [chrome://extensions](chrome://extensions).  Check
+`Developer mode` then hit `Load unpacked extension` and point it at
+the folder you extracted to.  Voila!
+
 TODO
 ----
 
