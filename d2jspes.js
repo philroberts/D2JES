@@ -13,6 +13,9 @@ if ( window.location.pathname == "/topic.php" ) {
         });
     });
 
+    // Copy each post so it can be converted to bbcode without our
+    // additions by the quote function.  Don't render the original
+    // copy.
     $('div[id^="tp"]').each( function( idx ) {
         $(this).after($(this).clone().attr("id", "d2jes" + $(this).attr("id")));
         $(this).attr("style", "display:none;");
