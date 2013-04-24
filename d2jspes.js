@@ -15,7 +15,7 @@ if ( window.location.pathname == "/topic.php" ) {
 
     $('div[id^="tp"]').each( function( idx ) {
         $(this).after($(this).clone().attr("id", "d2jes" + $(this).attr("id")));
-        $(this).attr("style", "visibility:collapse;width:0;height:0;");
+        $(this).attr("style", "display:none;");
     });
     // Add bnet link for battletags.
     btag = /([a-zA-Z][a-zA-Z0-9]*)#([0-9]{4,})/g
