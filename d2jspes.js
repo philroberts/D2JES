@@ -22,8 +22,12 @@ if ( window.location.pathname == "/topic.php" ) {
     $('div[id^="d2jestp"],div.sig').each( function( idx ) {
         content = $(this).html();
         newcontent = content;
+        offset = 0;
         while ( tag = btag.exec(content) ) {
-            newcontent = newcontent.replace(tag[0], "<a href='http://us.battle.net/d3/en/profile/" + tag[1] + "-" + tag[2] + "/'>" + tag[0] + "</a> (<a href='http://d3up.com/search?search=" + tag[1] + "%23" + tag[2] + "'>d3up</a>)");
+            startidx = btag.lastIndex - tag[0].length + offset;
+            linkstr = "<a href='http://us.battle.net/d3/en/profile/" + tag[1] + "-" + tag[2] + "/'>" + tag[0] + "</a> (<a href='http://d3up.com/search?search=" + tag[1] + "%23" + tag[2] + "'>d3up</a>)";
+            newcontent = newcontent.slice(0, startidx) + linkstr + newcontent.slice(startidx + tag[0].length);
+            offset += linkstr.length - tag[0].length;
         }
         $(this).html(newcontent);
         btag.lastIndex = 0;
