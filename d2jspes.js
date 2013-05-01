@@ -20,6 +20,13 @@ if ( window.location.pathname == "/topic.php" ) {
         $(this).after($(this).clone().attr("id", "d2jes" + $(this).attr("id")));
         $(this).attr("style", "display:none;");
     });
+    // The edit function turns your post into an edit box so we need
+    // to unhide the original post tag and hide our modified version.
+    $('div.links>a:contains("Edit")').each( function( idx ) {
+        match = /javascript:dq\(([0-9]+)\)/.exec($(this).attr("href"));
+        $(this).attr("href", "javascript:gi('tp" + match[1] + "').style.display='block';gi('d2jestp" + match[1] + "').style.display='none';dq(" + match[1] + ")");
+    });
+    
     // Add bnet link for battletags.
     btag = /([a-zA-Z][a-zA-Z0-9]*)#([0-9]{4,})/g
     $('div[id^="d2jestp"],div.sig').each( function( idx ) {
